@@ -1,37 +1,24 @@
-print('PROGRAM DO GENEROWANIA HASEL')
+while True:
+    import random
+    import string
+    dlugosc_hasla = int(input("Podaj długość hasła: "))
+    
+    if isinstance(dlugosc_hasla, int):
+        pass
+    else:
+        print('Wpisz liczbe calkowita!')
+        True
+    
+    def generuj_haslo(dlugosc):
+        znaki = string.ascii_letters + string.digits + string.punctuation
+        haslo = ''.join(random.choice(znaki) for i in range(dlugosc))
+        return haslo
 
-import secrets
-import string
+    nowe_haslo = generuj_haslo(dlugosc_hasla)
+    print("Wygenerowane hasło:", nowe_haslo)
 
-dlugosc=int(input('Podaj dlugosc hasla: '))
-cyfry=int(input('Podaj ilos cyfr: '))
-def generowanie_hasla(dlugosc, cyfry):
-    # Sprawdź, czy suma długości liter i cyfr jest równa oczekiwanej długości
-    if dlugosc < cyfry:
-        print("Błąd: Łączna długość liter i cyfr nie może być mniejsza niż oczekiwana długość hasła.")
-        return None
+    print('Czy chcesz wygenerowac jeszcze jedno haslo?')
+    powtorka=input("Jesli chcesz wygenerowac nowe haslo wpisz tak: ")
 
-    # Zdefiniuj zestaw znaków, z których ma być generowane hasło
-    characters = string.ascii_letters + string.digits
-
-    # Wybierz cyfry do hasła
-    digits = ''.join(secrets.choice(string.digits) for _ in range(cyfry))
-
-    # Reszta hasła (bez cyfr)
-    length_without_digits = dlugosc - cyfry
-    password_without_digits = ''.join(secrets.choice(characters) for _ in range(length_without_digits))
-
-    # Połącz obie części hasła
-    password = password_without_digits + digits
-
-    # Wymieszaj hasło, aby zachować losowość
-    password_list = list(password)
-    secrets.SystemRandom().shuffle(password_list)
-    password = ''.join(password_list)
-
-    return password
-
-
-strong_password = generowanie_hasla(dlugosc, cyfry)
-if strong_password:
-    print(f"Silne hasło: {strong_password}")
+    if powtorka.lower() != 'tak':
+        break
