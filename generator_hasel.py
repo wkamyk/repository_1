@@ -1,13 +1,14 @@
 while True:
     import random
     import string
-    dlugosc_hasla = int(input("Podaj długość hasła: "))
-    
-    if isinstance(dlugosc_hasla, int):
+    dlugosc_hasla = int(input("Podaj długość hasła (max 40 znakow): "))
+
+    if dlugosc_hasla in range(1, 41):
         pass
     else:
-        print('Wpisz liczbe calkowita!')
-        True
+        print('Max 40 znakow!')
+        dlugosc_hasla = int(input("Podaj długość hasła jeszcze raz (max 40 znakow): "))
+        continue
     
     def generuj_haslo(dlugosc):
         znaki = string.ascii_letters + string.digits + string.punctuation
