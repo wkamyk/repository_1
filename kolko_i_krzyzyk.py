@@ -29,6 +29,7 @@ kolej = random.choice(['x','o'])
 
 ODSTEP = int(BOK / 3)
 
+
 for a in [1,2]:
     xo.penup()
     xo.goto(X + a*ODSTEP, Y)
