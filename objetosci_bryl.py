@@ -2,7 +2,7 @@ while True:
     print('======== PROGRAM ODBLICZAJACY OBJETOSC BRYL ========')
     print()
     print('Spis numerow bryl: ')
-    print('0 - zamniecie programu')
+    print('0 - zamkniecie programu')
     print('1 - szescian')
     print('2 - prostopadloscian')
     print('3 - graniastoslup prawidlowy trojkatny')
