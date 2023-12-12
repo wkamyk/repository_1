@@ -14,12 +14,23 @@ while True:
         znaki = string.ascii_letters + string.digits + string.punctuation
         haslo = ''.join(random.choice(znaki) for i in range(dlugosc))
         return haslo
+    
+    print()
+    print('================================')
+    print()
 
     nowe_haslo = generuj_haslo(dlugosc_hasla)
     print("Wygenerowane hasło:", nowe_haslo)
+    print()
+    print('================================')
+    print()
 
     print('Czy chcesz wygenerowac jeszcze jedno haslo?')
     powtorka=input("Jesli chcesz wygenerowac nowe haslo wpisz tak: ")
+
+    print()
+    print('================================')
+    print()
 
     if powtorka.lower() != 'tak':
         break
