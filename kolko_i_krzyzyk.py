@@ -43,16 +43,20 @@ for a in [1,2]:
 
 def sprawdz ():
     #po skosie
-    if tablica[0][0] == tablica[1][1] == tablica[2][2]: return tablica[2][2]
-    if tablica[0][2] == tablica[1][1] == tablica[2][0]: return tablica[2][2]
+    if tablica[0][0] == tablica[1][1] == tablica[2][2]: return tablica[0][0]
+    if tablica[0][2] == tablica[1][1] == tablica[2][0]: return tablica[0][2]
 
     #w wierszu
     for w in range(2):
-        if tablica[w][0] == tablica[w][1] == tablica[w][2]: return tablica [w][2]
+        if tablica[w][0] == tablica[w][1] == tablica[w][2]: return tablica[w][0]
 
     #w kolumnie
     for k in range(2):
         if tablica[0][k] == tablica[1][k] == tablica[2][k]: return tablica [2][k]
+
+    #sprawdzenie remisu
+    if all(all(cell is not None for cell in row) for row in tablica):
+        return 'Remis'
 def click(x,y):
 
     global kolej
