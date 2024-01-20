@@ -101,4 +101,4 @@ while True:
             wynik = ilosc_powierzchnia * 100
             print(ilosc_powierzchnia, 'cm² to', wynik, 'mm²')
         else:
-            print('Nie ma takiego wyboru!')
+            print('Nie ma takiego wyboru! ')
